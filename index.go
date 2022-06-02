@@ -25,9 +25,14 @@ type Album struct {
 
 var AllAlbums Albums
 
+func home(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Endpoint Hit: home")
+	json.NewEncoder(w).Encode((AllAlbums))
+}
+
 func returnAllAlbums(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Endpoint Hit: returnAllAlbums")
-	json.NewEncoder(w).Encode((AllAlbums))
+	fmt.Fprintf(w, "Hi! You can user the /albums endpoint to get all the albums, or maybe the /albums/studio, /albums/live and /albums/weird endpoints!")
 }
 
 func returnStudioAlbums(w http.ResponseWriter, r *http.Request) {
@@ -48,8 +53,7 @@ func returnWeirdStuff(w http.ResponseWriter, r *http.Request) {
 func handleRequests() {
 	port := os.Getenv("PORT")
 
-	fmt.Println(port)
-
+	http.HandleFunc("/", home)
 	http.HandleFunc("/albums", returnAllAlbums)
 	http.HandleFunc("/albums/studio", returnStudioAlbums)
 	http.HandleFunc("/albums/live", returnLiveAlbums)
