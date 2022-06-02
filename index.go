@@ -7,8 +7,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-
-	"github.com/joho/godotenv"
 )
 
 type Albums struct {
@@ -61,12 +59,6 @@ func handleRequests() {
 }
 
 func main() {
-
-	err := godotenv.Load(".env")
-
-	if err != nil {
-		log.Fatalf("Error loading .env file")
-	}
 
 	jsonFile, err := os.Open("album-data.json")
 
