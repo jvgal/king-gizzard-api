@@ -7,6 +7,8 @@ import (
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/joho/godotenv"
 )
 
 type Albums struct {
@@ -46,14 +48,27 @@ func returnWeirdStuff(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleRequests() {
+	port := os.Getenv("PORT")
+
+	fmt.Println(port)
+
 	http.HandleFunc("/albums", returnAllAlbums)
 	http.HandleFunc("/albums/studio", returnStudioAlbums)
 	http.HandleFunc("/albums/live", returnLiveAlbums)
 	http.HandleFunc("/albums/weird", returnWeirdStuff)
-	log.Fatal(http.ListenAndServe(":3302", nil))
+
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
 
 func main() {
+
+	// load .env file from given path
+	// we keep it empty it will load .env from current directory
+	err := godotenv.Load(".env")
+
+	if err != nil {
+		log.Fatalf("Error loading .env file")
+	}
 
 	jsonFile, err := os.Open("album-data.json")
 
