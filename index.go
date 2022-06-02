@@ -27,12 +27,12 @@ var AllAlbums Albums
 
 func home(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Endpoint Hit: home")
-	json.NewEncoder(w).Encode((AllAlbums))
+	fmt.Fprintf(w, "Hi! You can user the /albums endpoint to get all the albums, or maybe the /albums/studio, /albums/live and /albums/weird endpoints!")
 }
 
 func returnAllAlbums(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Endpoint Hit: returnAllAlbums")
-	fmt.Fprintf(w, "Hi! You can user the /albums endpoint to get all the albums, or maybe the /albums/studio, /albums/live and /albums/weird endpoints!")
+	json.NewEncoder(w).Encode((AllAlbums))
 }
 
 func returnStudioAlbums(w http.ResponseWriter, r *http.Request) {
