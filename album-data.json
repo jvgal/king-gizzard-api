@@ -139,7 +139,28 @@
           "art": "https://f4.bcbits.com/img/a2638998972_10.jpg",
           "player": "https://kinggizzard.bandcamp.com/album/omnium-gatherum",
           "label": "KGLW"
-      }
+        }
+        {
+          "releaseDate": "2022-10-07",
+          "name": "Ice, Death, Planets, Lungs, Mushrooms and Lava",
+          "art": "https://f4.bcbits.com/img/a3317842641_10.jpg",
+          "player": "https://kinggizzard.bandcamp.com/album/ice-death-planets-lungs-mushrooms-and-lava",
+          "label": "KGLW"
+        }
+        {
+          "releaseDate": "2022-10-12",
+          "name": "Laminated Denim",
+          "art": "https://f4.bcbits.com/img/a3665205369_10.jpg",
+          "player": "https://kinggizzard.bandcamp.com/album/laminated-denim",
+          "label": "KGLW"
+        }
+        {
+          "releaseDate": "2022-10-28",
+          "name": "Changes",
+          "art": "https://f4.bcbits.com/img/a1890146474_10.jpg",
+          "player": "https://kinggizzard.bandcamp.com/album/changes",
+          "label": "KGLW"
+        }
     ],
     "liveAlbums": [
         {
